@@ -1,11 +1,12 @@
-var num1,num2,sum;
+var birthDate = prompt("Enter your birth date");
+var birth = new Date(birthDate);
 
-num1 = prompt("Enter number 1: ");
-num2 = prompt("Enter number 2: ");
+var date = new Date();
 
-num1 = parseInt(num1);
-num2 = parseInt(num2);
 
-sum = num1 + num2;
-
-console.log(sum);
+if(birth.getMonth() == date.getMonth() && birth.getDate() == date.getDate()){
+    console.log(date.getFullYear() - birth.getFullYear());
+}
+else{
+    console.log((date.getFullYear() - 1) - birth.getFullYear());
+}
