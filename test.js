@@ -1,12 +1,14 @@
-var birthDate = prompt("Enter your birth date");
-var birth = new Date(birthDate);
-
-var date = new Date();
-
-
-if(birth.getMonth() == date.getMonth() && birth.getDate() == date.getDate()){
-    console.log(date.getFullYear() - birth.getFullYear());
+const async = function(number, callback){
+    const result = number + 2;
+    callback(result);
 }
-else{
-    console.log((date.getFullYear() - 1) - birth.getFullYear());
-}
+
+async(2, function (result){
+        console.log(result);
+        async(4, function (result){
+            console.log(result);
+            async(6, function(result){
+                console.log(result);
+            })
+        })
+});
